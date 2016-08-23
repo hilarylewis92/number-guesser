@@ -1,35 +1,31 @@
+number = Math.round(Math.random()*101);
 
-function numberGenerator () {
-  number = Math.round(Math.random()*101);
-}
+var guessButton = document.querySelector('.guess-button');
 
-function myGuess (guess) {
-  var numberGuess = document.getElementById('number');
-  var guess = document.getElementById('guess').value;
-}
+guessButton.addEventListener('click', function() {
+  var guess = document.getElementById('guess');
+});
 
 
-if (guess == number) {
-  number.hint("That is correct! You win.");
-}
-else {
-  if (guess < number) {
-  number.hint ("That number was too low. Try again.");
-      }
-  else {
-    if (guess > number) {
-      return "That number was too high. Try again.";
-      }
-    else {
-      return NaN;
-      }
-    }
-  }
-
-  function clearFields() {
-       document.getElementById('guess').value = "";
-  }
-  function resetFields() {
-     document.getElementById('guess').value = "";
-     //reset random generator
-   }
+//
+//
+// if (guess == number) {
+//   number.hint("That is correct! You win.");
+//     }
+//
+// if (guess < number) {
+//   number.hint ("That number was too low. Try again.");
+//       }
+//
+//   if (guess > number) {
+//       return "high. Try again.";
+//       }
+//
+//
+//   function clearFields() {
+//        document.getElementById('guess').value = "";
+//   }
+//   function resetFields() {
+//      document.getElementById('guess').value = "";
+//      //reset random generator
+//    }
