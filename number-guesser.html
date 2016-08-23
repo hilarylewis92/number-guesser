@@ -2,28 +2,35 @@
 <html>
   <head>
     <link rel="stylesheet" href="./style.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="./scripts.js" media="screen" title="no title" charset="utf-8">
     <meta charset="utf-8">
     <title>Number Guesser</title>
   </head>
 
   <body>
     <h1>Number Guesser</h1>
-      <p>
-        Guess a number:
-      </p>
-      <p>
-        Your last guess was...
+    <fieldset>
+      <p>Guess a whole number between 0 and 100:</p>
+      <p>Your last guess was...
 <br>
         <span class="number-input">#</span>
 <br>
-        That number was too <span class="hint"></span>. Try again.
+        <span class="hint"></span>
       </p>
 
-      <input type="number" name="guess" value="" min = "0" max="100">
+      <input type="text" id="guess" value="" min = "0" max="100">
 <br>
-      <button type="button" name="submit">submit</button>
-      <button type="button" name="clear">clear</button>
-      <button type="button" name="reset">reset</button>
+      <button type="button" name="submit">Guess</button>
+
+      <button type="button" onclick="clearsFields()" name="clear">clear</button>
+
+      <button type="button" onclick="resetFields()" name="reset">reset</button>
+    </fieldset>
+
+    <fieldset>
+      <p>Your current status</p>
+      <output id="number"></output>
+    </fieldset>
 
   </body>
 </html>
