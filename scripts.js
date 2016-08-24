@@ -62,12 +62,18 @@ resetButton.addEventListener('click', function () {
     number = Math.round(Math.random()*101);
 });
 
-// function disableClearButton() {
-//     if (guessInput.value = '') {
-//         clearButton.disabled = true;
-//     }
-//     else {
-//         clearButton.disabled = false;
-//     }}
+// guessInput.addEventListener('keypress', function(){
+// });
 
-// disableClearButton();
+addEventListener('click', function(){
+  // resetButton.disabled = false;
+});
+
+function disableClearButtonCheck() {
+  if (guessInput.value === '') {
+    clearButton.disabled = true;
+  } else {
+    clearButton.disabled = false;
+}}
+
+setInterval(disableClearButtonCheck, 500);
