@@ -1,31 +1,74 @@
+var firstLine = document.getElementById('firstLine');
+var secondLine = document.getElementById('secondLine');
+var thirdLine = document.getElementById('thirdLine');
+var guessInput = document.getElementById('guessInput');
+var guessButton = document.getElementById('guessButton');
+var clearButton = document.getElementById('clearButton');
+var resetButton = document.getElementById('resetButton');
+var errorPrompt = document.getElementById('errorPrompt');
+var minGuess = 0;
+var maxGuess = 100;
+
 number = Math.round(Math.random()*101);
 
-var guessButton = document.querySelector('.guess-button');
+function clearError() {
+    errorPrompt.innerText = '';
+}
 
-guessButton.addEventListener('click', function() {
-  var guess = document.getElementById('guess');
+function clearMessageLines() {
+    secondLine.innerText = '';
+    thirdLine.innerText = '';
+}
+
+guessButton.addEventListener('click', function () {
+  var guess = parseInt(guessInput.value);
+  if (isNaN(guess)) {
+      errorPrompt.innerText = '*You need to guess a number';
+      clearMessageLines();
+  }
+  if (guess > number) {
+      secondLine.innerText = 'You guessed ' + guess;
+      thirdLine.innerText = 'Sorry, that guess is too high. Try a lower number.';
+      errorPrompt.innerText = '';
+  }
+  if (guess < number) {
+      secondLine.innerText = 'You guessed ' + guess;
+      thirdLine.innerText = 'Sorry, that guess is too low. Try a higher number.';
+      errorPrompt.innerText = '';
+  }
+  if (guess === number) {
+      secondLine.innerText = 'You guessed ' + guess;
+      thirdLine.innerText = 'Congradulations! You guessed the number!';
+      errorPrompt.innerText = '';
+  }
+  if (guess < minGuess) {
+      errorPrompt.innerText = '*That number is below the minimum guess.';
+      clearMessageLines();
+  }
+  if (guess > maxGuess) {
+      errorPrompt.innerText = '*That number is above the maximum guess';
+      clearMessageLines();
+  }
+  disableClearButton();
 });
 
+clearButton.addEventListener('click', function () {
+    guessInput.value = '';
+});
 
-//
-//
-// if (guess == number) {
-//   number.hint("That is correct! You win.");
+resetButton.addEventListener('click', function () {
+    guessInput.value = '';
+    clearMessageLines();
+    clearError();
+    number = Math.round(Math.random()*101);
+});
+
+// function disableClearButton() {
+//     if (guessInput.value = '') {
+//         clearButton.disabled = true;
 //     }
-//
-// if (guess < number) {
-//   number.hint ("That number was too low. Try again.");
-//       }
-//
-//   if (guess > number) {
-//       return "high. Try again.";
-//       }
-//
-//
-//   function clearFields() {
-//        document.getElementById('guess').value = "";
-//   }
-//   function resetFields() {
-//      document.getElementById('guess').value = "";
-//      //reset random generator
-//    }
+//     else {
+//         clearButton.disabled = false;
+//     }} 
+
+// disableClearButton();

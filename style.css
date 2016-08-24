@@ -5,8 +5,36 @@ body {
   color: white;
 }
 
+h1 {
+  font-size: 68px;
+}
+
+p {
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px
+}
+
+#firstLine {
+  padding-top: 50px;
+}
+
+#thirdLine {
+  padding-bottom: 50px;
+}
+
 input {
   width: 100px;
   height: 20px;
   color: gray;
+  font-size: 20px;
+}
+
+button {
+  font-size: 20px;
+}
+
+#errorPrompt {
+  padding-top: 24px;
+  color: indianred;
 }

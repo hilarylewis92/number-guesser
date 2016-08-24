@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="./reset.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="./style.css" media="screen" title="no title" charset="utf-8">
     <meta charset="utf-8">
     <title>Number Guesser</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=true;">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
   <body>
     <h1>Number Guesser</h1>
-    <fieldset>
-      <p>Guess a whole number between 0 and 100:</p>
-      <p class="number-input"></p>
-      <p class="hint"></p>
 
-      <input type="number" id="guess" min = "0" max="100">
-<br>
-      <button type="button" class="guess-button" name="submit">Guess</button>
+      <p id="firstLine">Guess a whole number between 0 and 100:</p>
+      <p id="secondLine"></p>
+      <p id="thirdLine"></p>
 
-      <button type="button" onclick="clearsFields()" name="clear">clear</button>
+      <input type="number" id="guessInput" value="" min="0" max="100">
 
-      <button type="button" onclick="resetFields()" name="reset">reset</button>
-    </fieldset>
+      <button type="button" id="guessButton" name="guessButton">Guess</button>
+      <button type="button" id="clearButton" name="clearButton">Clear</button>
+      <button type="button" id="resetButton" name="resetButton">Reset</button>
 
+      <p id="errorPrompt"></p>
     <script src="scripts.js"></script>
   </body>
 </html>
