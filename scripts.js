@@ -62,11 +62,12 @@ resetButton.addEventListener('click', function () {
     number = Math.round(Math.random()*101);
 });
 
-// guessInput.addEventListener('keypress', function(){
-// });
-
 addEventListener('click', function(){
-  // resetButton.disabled = false;
+  if (thirdLine.innerText !== '' || errorPrompt.innerText !== '') {
+    resetButton.disabled = false;
+  } else {
+    resetButton.disabled = true;
+  }
 });
 
 function disableClearButtonCheck() {
@@ -76,4 +77,4 @@ function disableClearButtonCheck() {
     clearButton.disabled = false;
 }}
 
-setInterval(disableClearButtonCheck, 500);
+setInterval(disableClearButtonCheck(), 500);
