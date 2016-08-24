@@ -49,7 +49,6 @@ guessButton.addEventListener('click', function () {
       errorPrompt.innerText = '*That number is above the maximum guess';
       clearMessageLines();
   }
-  disableClearButton();
 });
 
 clearButton.addEventListener('click', function () {
@@ -69,6 +68,6 @@ resetButton.addEventListener('click', function () {
 //     }
 //     else {
 //         clearButton.disabled = false;
-//     }} 
+//     }}
 
 // disableClearButton();
