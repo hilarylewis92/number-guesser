@@ -9,7 +9,14 @@ var errorPrompt = document.getElementById('errorPrompt');
 var minGuess = 0;
 var maxGuess = 100;
 
-number = Math.round(Math.random()*101);
+function numberGenerator() {
+number = Math.round(Math.random() * (maxGuess - minGuess)) + minGuess;
+}
+
+numberGenerator();
+
+
+firstLine.innerText = 'Guess a whole number between ' +minGuess+ ' and ' +maxGuess+ ':';
 
 function clearError() {
     errorPrompt.innerText = '';
@@ -22,6 +29,7 @@ function clearMessageLines() {
 
 guessButton.addEventListener('click', function () {
   var guess = parseInt(guessInput.value);
+
   if (isNaN(guess)) {
       errorPrompt.innerText = '*You need to guess a number';
       clearMessageLines();
@@ -40,7 +48,12 @@ guessButton.addEventListener('click', function () {
       secondLine.innerText = 'You guessed ' + guess;
       thirdLine.innerText = 'Congradulations! You guessed the number!';
       errorPrompt.innerText = '';
-  }
+      minGuess -= 10;
+      maxGuess += 10;
+      numberGenerator();
+      firstLine.innerText = 'Guess a whole number between ' +minGuess+ ' and ' +maxGuess+ ':';
+    }
+
   if (guess < minGuess) {
       errorPrompt.innerText = '*That number is below the minimum guess.';
       clearMessageLines();
@@ -59,7 +72,9 @@ resetButton.addEventListener('click', function () {
     guessInput.value = '';
     clearMessageLines();
     clearError();
-    number = Math.round(Math.random()*101);
+    minGuess = minGuess - 10;
+    maxGuess = maxGuess + 10;
+    numberGenerator();
 });
 
 addEventListener('click', function(){
@@ -76,6 +91,6 @@ function disableClearButtonCheck() {
   } else {
     clearButton.disabled = false;
   }
-}
 
+}
 setInterval(disableClearButtonCheck, 500);
