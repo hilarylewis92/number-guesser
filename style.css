@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  padding: 50px;
+  padding: 100px;
   color: white;
   background: url(./photos/pattern.jpg) no-repeat;
   background-size: cover;
@@ -11,7 +11,7 @@ body {
   width: 500px;
   margin: auto;
   background-color: black;
-  padding: 50px;
+  padding: 100px;
 }
 h1 {
   font-size: 70px;

@@ -10,13 +10,10 @@ var minGuess = 0;
 var maxGuess = 100;
 
 function numberGenerator() {
-number = Math.round(Math.random() * (maxGuess - minGuess)) + minGuess;
+  number = Math.round(Math.random() * (maxGuess - minGuess)) + minGuess;
 }
 
 numberGenerator();
-
-
-firstLine.innerText = 'Guess a whole number between ' +minGuess+ ' and ' +maxGuess+ ':';
 
 function clearError() {
     errorPrompt.innerText = '';
@@ -46,12 +43,13 @@ guessButton.addEventListener('click', function () {
   }
   if (guess === number) {
       secondLine.innerText = 'You guessed ' + guess;
-      thirdLine.innerText = 'Congradulations! You guessed the number!';
+      thirdLine.innerText = 'Congratulations! You guessed the number!';
       errorPrompt.innerText = '';
       minGuess -= 10;
       maxGuess += 10;
+      minGuessInput.value = minGuess;
+      maxGuessInput.value = maxGuess;
       numberGenerator();
-      firstLine.innerText = 'Guess a whole number between ' +minGuess+ ' and ' +maxGuess+ ':';
     }
 
   if (guess < minGuess) {
@@ -82,12 +80,46 @@ addEventListener('click', function(){
   }
 });
 
-function disableClearButtonCheck() {
+addEventListener ('keyup', function () {
   if (guessInput.value === '') {
     clearButton.disabled = true;
   } else {
     clearButton.disabled = false;
   }
+});
 
-}
-setInterval(disableClearButtonCheck, 500);
+minGuessInput.addEventListener ('keyup', function () {
+  if (parseInt(minGuessInput.value) != minGuess) {
+    minGuess = parseInt(minGuessInput.value);
+    numberGenerator();
+    clearMessageLines();
+    errorPrompt.innerText = '*The random number has been reset.';
+  }
+});
+
+maxGuessInput.addEventListener ('keyup', function () {
+  if (parseInt(maxGuessInput.value) != maxGuess) {
+    maxGuess = parseInt(maxGuessInput.value);
+    numberGenerator();
+    clearMessageLines();
+    errorPrompt.innerText = '*The random number has been reset.';
+  }
+});
+
+minGuessInput.addEventListener ('click', function () {
+  if (parseInt(minGuessInput.value) != minGuess) {
+    minGuess = parseInt(minGuessInput.value);
+    numberGenerator();
+    clearMessageLines();
+    errorPrompt.innerText = '*The random number has been reset.';
+  }
+});
+
+maxGuessInput.addEventListener ('click', function () {
+  if (parseInt(maxGuessInput.value) != maxGuess) {
+    maxGuess = parseInt(maxGuessInput.value);
+    numberGenerator();
+    clearMessageLines();
+    errorPrompt.innerText = '*The random number has been reset.';
+  }
+});
