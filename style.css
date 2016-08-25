@@ -13,22 +13,28 @@ body {
   background-color: black;
   padding: 100px;
 }
+
 h1 {
   font-size: 70px;
 }
 
-p {
+#firstLine {
   font-size: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px
+  padding: 10px;
 }
 
-#firstLine {
-  padding-top: 50px;
+#secondLine {
+  padding: 10px;
+  color: white;
 }
 
 #thirdLine {
-  padding-bottom: 50px;
+  padding: 10px;
+  color: white;
+}
+
+.rangeBox {
+  border: 5px;
 }
 
 input {
@@ -42,11 +48,6 @@ button {
   font-size: 20px;
   border: 2px solid gray;
 }
-
-/*.disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}*/
 
 #errorPrompt {
   padding-top: 24px;

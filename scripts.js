@@ -1,4 +1,5 @@
 var firstLine = document.getElementById('firstLine');
+var inputDisplay = document.getElementById('inputDisplay');
 var secondLine = document.getElementById('secondLine');
 var thirdLine = document.getElementById('thirdLine');
 var guessInput = document.getElementById('guessInput');
@@ -29,17 +30,16 @@ guessButton.addEventListener('click', function () {
 
   if (isNaN(guess)) {
       errorPrompt.innerText = '*You need to guess a number';
-      clearMessageLines();
   }
   if (guess > number) {
       secondLine.innerText = 'You guessed ' + guess;
       thirdLine.innerText = 'Sorry, that guess is too high. Try a lower number.';
-      errorPrompt.innerText = '';
+      clearError();
   }
   if (guess < number) {
       secondLine.innerText = 'You guessed ' + guess;
       thirdLine.innerText = 'Sorry, that guess is too low. Try a higher number.';
-      errorPrompt.innerText = '';
+      clearError();
   }
   if (guess === number) {
       secondLine.innerText = 'You guessed ' + guess;
@@ -54,25 +54,37 @@ guessButton.addEventListener('click', function () {
 
   if (guess < minGuess) {
       errorPrompt.innerText = '*That number is below the minimum guess.';
-      clearMessageLines();
   }
   if (guess > maxGuess) {
       errorPrompt.innerText = '*That number is above the maximum guess';
-      clearMessageLines();
   }
 });
 
 clearButton.addEventListener('click', function () {
     guessInput.value = '';
+    clearButton.disabled = true;
 });
 
 resetButton.addEventListener('click', function () {
+    minGuess = 0;
+    maxGuess = 100;
+    minGuessInput.value = minGuess;
+    maxGuessInput.value = maxGuess;
+    clearButton.disabled = true;
     guessInput.value = '';
     clearMessageLines();
     clearError();
 });
 
 addEventListener('click', function(){
+  if (thirdLine.innerText !== '' || errorPrompt.innerText !== '') {
+    resetButton.disabled = false;
+  } else {
+    resetButton.disabled = true;
+  }
+});
+
+addEventListener('keyup', function(){
   if (thirdLine.innerText !== '' || errorPrompt.innerText !== '') {
     resetButton.disabled = false;
   } else {
