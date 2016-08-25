@@ -9,7 +9,8 @@
   </head>
 
   <body>
-    <h1>Number Guesser</h1>
+    <section class="black-background">
+      <h1>Number Guesser</h1>
 
       <p id="firstLine">Guess a whole number between 0 and 100:</p>
       <p id="secondLine"></p>
@@ -17,11 +18,16 @@
 
       <input type="number" id="guessInput" value="" min="0" max="100">
 
-      <button type="button" id="guessButton" name="guessButton">Guess</button>
-      <button type="button" id="clearButton" name="clearButton" disabled="true">Clear</button>
-      <button type="button" id="resetButton" name="resetButton" disabled="true">Reset</button>
+      <section class="button">
+        <button type="button" id="guessButton" name="guessButton">Guess</button>
+        <button type="button" id="clearButton" name="clearButton" disabled="true">Clear</button>
+        <button type="button" id="resetButton" name="resetButton" disabled="true">Reset</button>
+      </section>
 
       <p id="errorPrompt"></p>
+    </section>
+
     <script src="scripts.js"></script>
+
   </body>
 </html>

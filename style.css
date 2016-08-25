@@ -1,12 +1,20 @@
 body {
   text-align: center;
   padding: 50px;
-  background-color: black;
   color: white;
+  background: url(./photos/pattern.jpg) no-repeat;
+  background-size: cover;
 }
 
+.black-background {
+  height: 350px;
+  width: 500px;
+  margin: auto;
+  background-color: black;
+  padding: 50px;
+}
 h1 {
-  font-size: 68px;
+  font-size: 70px;
 }
 
 p {
@@ -32,9 +40,19 @@ input {
 
 button {
   font-size: 20px;
+  border: 2px solid gray;
 }
+
+/*.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}*/
 
 #errorPrompt {
   padding-top: 24px;
   color: indianred;
+}
+
+.button {
+  padding: 20px;
 }

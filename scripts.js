@@ -75,6 +75,7 @@ function disableClearButtonCheck() {
     clearButton.disabled = true;
   } else {
     clearButton.disabled = false;
-}}
+  }
+}
 
-setInterval(disableClearButtonCheck(), 500);
+setInterval(disableClearButtonCheck, 500);
