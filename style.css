@@ -17,6 +17,20 @@ p {
 
 #firstLine {
   padding-top: 50px;
+  font-size: 30px
+}
+
+.rangeBox {
+  text-align: center;
+  font-size: 30px;
+  padding: 5px;
+  background-color: #000000;
+  color: cadetblue;
+
+}
+
+.messageLines {
+  height: 105px;
 }
 
 #thirdLine {
@@ -37,4 +51,8 @@ button {
 #errorPrompt {
   padding-top: 24px;
   color: indianred;
+}
+
+#playAgainButton {
+  display: none;
 }

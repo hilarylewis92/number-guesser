@@ -7,21 +7,19 @@
     <title>Number Guesser</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-
   <body>
     <h1>Number Guesser</h1>
-
-      <p id="firstLine">Guess a whole number between 0 and 100:</p>
+    <p id="firstLine">Guess a whole number between <input type="number" value="0" id="minGuessInput" class="rangeBox"> and <input type="number" value="100" id="maxGuessInput" class="rangeBox">:</p>
+    <section class="messageLines">
       <p id="secondLine"></p>
       <p id="thirdLine"></p>
-
-      <input type="number" id="guessInput" value="" min="0" max="100">
-
-      <button type="button" id="guessButton" name="guessButton">Guess</button>
-      <button type="button" id="clearButton" name="clearButton" disabled="true">Clear</button>
-      <button type="button" id="resetButton" name="resetButton" disabled="true">Reset</button>
-
-      <p id="errorPrompt"></p>
+    </section>
+    <input type="number" id="guessInput" value="" min="0" max="100">
+    <button type="button" id="guessButton" name="guessButton">Guess</button>
+    <button type="button" id="clearButton" name="clearButton" disabled="true">Clear</button>
+    <button type="button" id="resetButton" name="resetButton" disabled="true">Reset</button>
+    <p id="errorPrompt"></p>
+    <button type="button" id="playAgainButton">Play again?</button>
     <script src="scripts.js"></script>
   </body>
 </html>
