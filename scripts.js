@@ -72,9 +72,6 @@ resetButton.addEventListener('click', function () {
     guessInput.value = '';
     clearMessageLines();
     clearError();
-    minGuess = minGuess - 10;
-    maxGuess = maxGuess + 10;
-    numberGenerator();
 });
 
 addEventListener('click', function(){
